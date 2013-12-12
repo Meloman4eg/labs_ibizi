@@ -1,0 +1,19 @@
+%h1 Лабораторная работа №2
+%h3 Изучение работы потоковых шифров
+%form{ action: '', method: 'post', enctype: 'multipart/form-data'}
+  %fieldset
+    %ul.unstyled
+      %li
+        %label{for: 'file_upload'} Выберите файл:
+        %input{type: 'file', name: 'f', class: "filestyle"}
+      %li
+        %label{for: 'password'} Введите пароль:
+        %input.span3{type: 'password', name: 'pass', placeholder: 'Пароль'}
+      %br
+      %input.span3{type: 'submit', value: 'Зашифровать', class: 'btn btn-success btn-large'}
+%p.lead
+  =@speed_stat
+  %br
+  - if @visible_a
+    %a{ :href => @filename, :title => 'Скачать файл' }
+      Скачать зашифрованный файл

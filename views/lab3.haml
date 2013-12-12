@@ -1,0 +1,50 @@
+%h1 Лабораторная работа №3
+%h3 Изучение работы блоковых шифров и способов их объединения
+.span5
+  %form{ action: '', method: 'post', enctype: 'multipart/form-data'}
+    %fieldset
+      %ul.unstyled
+        %li
+          %label{for: 'file_upload'} Выберите файл:
+          %input.span6{type: 'file', name: 'f', class: "filestyle"}
+        %br
+        %li
+          %label{for: 'first_number'} Введите пароль:
+          %input.span6{type: 'password', name: 'pass', placeholder: 'Пароль'}
+        %li
+          %label{for: 'encode_type'} Что вы хотите сделать с файлом?
+          %label.radio
+            %input{type: 'radio', name: 'encode_type', value: 'encode'}
+            Зашифровать
+          %label.radio
+            %input{type: 'radio', name: 'encode_type', value: 'decode'}
+            Расшифровать
+        %br
+        %li
+          %label{for: 'mode'} Выберите режим шифрования/расшифрования:
+          %label.radio
+            %input{type: 'radio', name: 'mode', value: 'feistel'}
+            Сеть Фейстела
+          %label.radio
+            %input{type: 'radio', name: 'mode', value: 'ecb'}
+            ECB
+        %br
+        %input.span6{type: 'submit', value: 'Зашифровать', class: 'btn btn-success btn-large'}
+.span4
+  %p.text-info
+    =@crypte_status
+    %br
+    =@mode
+  - if @visible_a
+    %hr
+  %p.lead.text-error
+    =@error
+  %p.text-success
+    =@status
+    %br
+    =@speed_stat
+    %br
+  %p.lead
+    - if @visible_a
+      %a{ :href => @filename, :title => 'Скачать файл' }
+        Скачать зашифрованный файл

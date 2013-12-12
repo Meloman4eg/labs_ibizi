@@ -1,0 +1,31 @@
+%h1 Лабораторная работа №1
+%h3 Изучение генераторов псевдослучайных последовательностей
+%form{ action: '', method: 'post', class: 'form-signin'}
+  %fieldset
+    %ul.unstyled
+      %li
+        %label{for: 'generator'} Выберите генератор:
+        %label.radio
+          %input{type: 'radio', name: 'generator', value: 'default', class: 'text'}
+          Встроенный в язык Ruby
+        %label.radio
+          %input{type: 'radio', name: 'generator', value: 'park-miller', class: 'text'}
+          Генератор Парка-Миллера
+        %label.radio
+          %input{type: 'radio', name: 'generator', value: 'stop-go', class: 'text', id: 'some'}
+          Генератор 'Стоп-Пошёл'
+        %br
+      %li
+        %label{for: 'filename'} Введите имя файла:
+        %input.span3{type: 'text', name: 'filename', class: 'text'}
+      %li
+        %label{for: 'filesize'} Введите размер файла:
+        %input.span3{type: 'text', name: 'filesize', class: 'text'}
+          %span.help-inline байт
+      %li
+        %label{for: 'first_number'} Введите начальное значение:
+        %input.span3{type: 'text', name: 'first_value', class: 'number', placeholder: 'Одно число'}
+          //%span.help-block Одно число,если выбран генератор Парка-Миллера
+          //%span.help-block 3 числа (от 1 до 15), если выбран генератор 'Стоп-Пошёл'
+      %br
+      %input.span3{type: 'submit', value: 'Сгенерировать', class: 'btn btn-success btn-large'}

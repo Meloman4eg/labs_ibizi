@@ -1,0 +1,30 @@
+%html
+ %head
+  %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8'}
+  = bootstrap_assets
+  %title Лабораторные работы по "ИБиЗИ"
+ %body
+  .container
+   .masthead
+   %h3.muted Информационная безопасность и защита информации
+   %hr
+   .container-fluid
+    .row-fluid
+     .span3.bs-docs-sidebar
+      %ul.nav.nav-list.bs-docs-sidenav
+       %li.nav_header
+       %li
+        %a{ :href => '/labs/lab1', :title => 'Лабораторная работа №1' }
+         Лабораторная работа №1
+       %li
+        %a{ :href => '/labs/lab2', :title => 'Лабораторная работа №2' }
+         Лабораторная работа №2
+       %li
+        %a{ :href => '/labs/lab3', :title => 'Лабораторная работа №3' }
+         Лабораторная работа №3
+     .span9
+      .container
+       .row
+        = yield
+    %footer
+     %p © Дадыкин Павел
